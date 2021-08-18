@@ -5,18 +5,28 @@ import {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 const CenterListContainer = ({getCenters, loadingCenters, centers}) => {
+    // useEffect(()=> {
+    //     getCenters();
+    // }, [getCenters]);
     useEffect(()=> {
-        getCenters();
-    }, [getCenters]);
+        const fn = async () => {
+            try {
+                await getCenters();
+            } catch (e) {
+                console.log(e);
+            }
+        };
+        fn();
+    })
     return (
         <CenterList loadingCenters={loadingCenters} centers={centers}/>
     );
 };
 
 export default connect(
-    ({center}) => ({
+    ({center, loading}) => ({
         centers : center.centers,
-            loadingCenters : center.loading.GET_CENTERS
+        loadingCenters : loading['sample/GET_CENTERS']
     }),
     {
         getCenters
