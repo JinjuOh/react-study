@@ -17,7 +17,7 @@ const CenterListContainer = ({getCenters, loadingCenters, centers}) => {
             }
         };
         fn();
-    })
+    }, [getCenters])
     return (
         <CenterList loadingCenters={loadingCenters} centers={centers}/>
     );
