@@ -8,9 +8,8 @@ const CenterListContainer = ({getCenters, loadingCenters, centers}) => {
     useEffect(()=> {
         getCenters();
     }, [getCenters]);
-    console.log(centers);
     return (
-        <CenterList loadingCenters={loadingCenters} centers={centers.data}/>
+        <CenterList loadingCenters={loadingCenters} centers={centers}/>
     );
 };
 

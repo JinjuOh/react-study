@@ -26,15 +26,13 @@ const CenterListBlock = styled.div`
 
 
 const CenterList = ({loadingCenters, centers}) => {
-    console.log("CenterList");
-    console.log(centers);
     return (
         <div>
             {loadingCenters && '로딩 중...'}
             {!loadingCenters && centers && (
                 <CenterListBlock>
                     {
-                        centers.map(center => (
+                        centers.data.map(center => (
                             <CenterItem key={center.id} center={center}/>
                         ))
                     }
