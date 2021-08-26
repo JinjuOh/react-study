@@ -59,7 +59,7 @@ const CenterItem = ({center}) => {
             <div ref={container} style={{width: '160px', height: '160px'}} className={"map"}></div>
             <div className={"contents"}>
                 <h2>
-                    <a href={"https://google.com"} target={"_blank"} rel={"noopener norefferer"}>
+                    <a href={`https://map.kakao.com/link/map/${centerName},${lat},${lng}`} target={"_blank"} rel={"noopener norefferer"}>
                         {centerName}
                     </a>
                 </h2>
