@@ -31,10 +31,16 @@ const StyledButton = styled.button`
     props.cyan &&
     css`
         background: ${palette.cyan[5]};
-        &:hover: {
+        &:hover {
             background: ${palette.cyan[4]};
         }
     `
+    }
+  
+  &:disabled {
+      background: ${palette.gray[3]};
+      color: ${palette.gray[5]};
+      cursor: not-allowed;
     }
 `;
 
